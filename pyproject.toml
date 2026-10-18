@@ -1,0 +1,29 @@
+[tool.black]
+line_length = 90
+target-version = ['py312']
+exclude = '''
+/(
+    \.git
+    | \.venv
+    | venv
+    | env
+    | .git
+    | __pycache__
+    | .pytest_cache
+    | infra/api_core
+)/
+'''
+
+
+[tool.isort]
+profile = "black"
+line_length = 90
+skip = [
+    "venv",
+    ".venv",
+    "env",
+    ".git",
+    "__pycache__",
+    ".pytest_cache",
+    "infra/api_core"
+]
