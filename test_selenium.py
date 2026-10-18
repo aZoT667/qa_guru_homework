@@ -1,8 +1,6 @@
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
 
 
 @pytest.fixture
@@ -23,8 +21,12 @@ def test_google_web(driver):
     assert driver.title == "Google"
     assert driver.current_url == url
 
+
 def test_github_web(driver):
     url = "https://github.com/"
     driver.get(url)
-    assert driver.title == 'GitHub · Change is constant. GitHub keeps you ahead. · GitHub · GitHub'
+    assert (
+        driver.title == "GitHub · Change is constant. "
+        "GitHub keeps you ahead. · GitHub · GitHub"
+    )
     assert driver.current_url == url
