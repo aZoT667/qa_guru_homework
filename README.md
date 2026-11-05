@@ -1,1 +1,1 @@
-# qa_guru_homework
+# Для изучения и домашней работы QA_GURU
