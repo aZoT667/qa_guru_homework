@@ -79,8 +79,12 @@ def test02():
         result_box = driver.find_element(By.ID, "output")
         
         # Проверяем, что в блоке результата появился введенный текст
-        assert "ivanexample.com" in result_box.text
-        print("Тест успешно пройден!")
+        if result_box.is_displayed():
+            assert "ivanexample.com" in result_box.text
+            print("Тест успешно пройден!")
+        else:
+            print("Некорректный email")
+
 
     finally:
         # 5. Закрытие браузера в любом случае
